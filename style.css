@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: blue;
+}
+
+.shape {
+  background-color: white;
+  width: 30em;
+  height: 20em;
+  border-radius: 20px;
+  margin: 10em auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.shape header {
+  font-size: 30px;
+  margin: 30px 0px;
+}
+
+.shape .content {
+  font-size: 20px;
+  max-width: 400px;
+  min-height: 150px;
+  letter-spacing: 1.3px;
+  text-align: center;
+}
+
+.shape .content .author {
+  margin-top: 20px;
+  letter-spacing: 0px;
+  text-align: right;
+}
+
+.shape .buttons {
+  align-self: flex-end;
+  margin-right: 60px;
+}
+
+.shape .buttons button {
+  margin: 0px 7px;
+  cursor: pointer;
+  padding: 7px 20px;
+  background-color: white;
+  color: #3131ff;
+  border: 2px solid #3131ff;
+}
+/*# sourceMappingURL=style.css.map */
