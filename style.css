@@ -32,7 +32,7 @@ body {
   font-size: 20px;
   max-width: 350px;
   min-height: 150px;
-  letter-spacing: 1.3px;
+  letter-spacing: 1.1px;
   text-align: center;
 }
 
@@ -114,17 +114,19 @@ div.settings .speed div {
 }
 
 div.settings .donothing {
-  background-color: blue;
   width: fit-content;
   margin: -10px auto;
 }
 
 div.settings .donothing .close {
+  font-size: 20px;
+  font-weight: bolder;
   cursor: pointer;
-  padding: 7px 15px;
-  background-color: #101820ff;
-  color: yellow;
-  border: 2px solid yellow;
+  padding: 7px 20px;
+  background-color: yellow;
+  border-radius: 10px;
+  color: red;
+  border: 2px solid black;
 }
 
 .yellow {

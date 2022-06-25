@@ -84,21 +84,25 @@ let textQuoto = document.querySelector(".content .text p").children[1];
 let authorQuoto = document.querySelector(".author");
 let mainShape = document.querySelector(".shape");
 let allBtn = document.querySelectorAll(".shape .buttons button");
+let speedQuote = "normal";
 // variables
 
 // Changing the quoto
 textQuoto.innerHTML = quotes[randomNum];
 authorQuoto.innerHTML = authors[randomNum];
-// Changing the quoto
-
-// jQuery next button
-$("button.next").on("click", function () {
-  $(".content").fadeOut("slow", function () {
+function changeQuote() {
+  $(".content").fadeOut(speedQuote, function () {
     randomNum = Math.floor(Math.random() * quotes.length);
     textQuoto.innerHTML = quotes[randomNum];
     authorQuoto.innerHTML = authors[randomNum];
   });
-  $(".content").fadeIn("slow");
+  $(".content").fadeIn(speedQuote);
+}
+// Changing the quoto
+
+// jQuery next button
+$("button.next").on("click", function () {
+  changeQuote();
 });
 // jQuery next button
 
@@ -107,7 +111,6 @@ let colors = document.querySelectorAll(".settings .colors div");
 let allColors = [];
 let allBodyColors = [];
 
-console.log(allBtn);
 colors.forEach((e) => {
   allColors.push(e.getAttribute("data-color"));
   allBodyColors.push(`${e.getAttribute("data-color")}Body`);
@@ -137,6 +140,15 @@ colors.forEach((e) => {
 });
 // Changing Color
 
+// Changing Speed
+let mainSpeed = document.querySelectorAll("div.settings .speed div");
+mainSpeed.forEach((e) => {
+  e.addEventListener("click", function () {
+    speedQuote = e.classList.item("0");
+  });
+});
+// Changing Speed
+
 // Settings buttons
 $(".shape .buttons .settings").on("click", function () {
   $("div.settings").animate({
@@ -154,3 +166,24 @@ $(".settings button.close").on("click", function () {
   });
 });
 // close button settings
+
+// Auto Button
+let counter = setInterval(function () {
+  console.log("hi");
+}, 3000);
+clearInterval(counter);
+
+let autoBtn = document.querySelector(".shape .buttons .auto");
+autoBtn.addEventListener("click", function () {
+  if (autoBtn.innerText == "Auto") {
+    counter = setInterval(() => {
+      changeQuote();
+    }, 4000);
+    autoBtn.innerText = "Stop";
+  } else {
+    clearInterval(counter);
+    clearInterval(counter);
+    autoBtn.innerText = "Auto";
+  }
+});
+// Auto Button
