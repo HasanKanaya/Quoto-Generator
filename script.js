@@ -87,6 +87,19 @@ let allBtn = document.querySelectorAll(".shape .buttons button");
 let speedQuote = "normal";
 // variables
 
+// Get Data From Local Storage
+if (localStorage.getItem("speed") != null) {
+  speedQuote = localStorage.getItem("speed");
+}
+if (localStorage.getItem("color") != null) {
+  document.body.classList.add(`${localStorage.getItem("color")}Body`);
+  allBtn.forEach((el) => {
+    el.classList.add(localStorage.getItem("color"));
+  });
+  mainShape.classList.add(localStorage.getItem("color"));
+}
+// Get Data From Local Storage
+
 // Changing the quoto
 textQuoto.innerHTML = quotes[randomNum];
 authorQuoto.innerHTML = authors[randomNum];
@@ -134,7 +147,7 @@ colors.forEach((e) => {
     // Elements
 
     // Local Stoarge
-    // localStorage.setItem("color", this.getAttribute("data-color"));
+    localStorage.setItem("color", this.getAttribute("data-color"));
     // Local Stoarge
   });
 });
@@ -145,6 +158,7 @@ let mainSpeed = document.querySelectorAll("div.settings .speed div");
 mainSpeed.forEach((e) => {
   e.addEventListener("click", function () {
     speedQuote = e.classList.item("0");
+    localStorage.setItem("speed", speedQuote);
   });
 });
 // Changing Speed
