@@ -8,6 +8,7 @@
 body {
   background-color: #101820ff;
   color: #101820ff;
+  max-height: calc(100vh - 9em);
 }
 
 .shape {
@@ -15,7 +16,7 @@ body {
   width: 25em;
   height: 20em;
   border-radius: 20px;
-  margin: 10em auto;
+  margin: 8em auto;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -160,5 +161,43 @@ div.settings .donothing .close {
 .darkBody {
   background-color: #222 !important;
   color: #222 !important;
+}
+
+@media (min-width: 768px) {
+  .shape {
+    width: 35em;
+    height: 22em;
+  }
+  .shape header {
+    font-size: 40px;
+  }
+  .shape .content {
+    font-size: 25px;
+    max-width: 450px;
+    min-height: 170px;
+  }
+  .shape .buttons {
+    margin-right: 70px;
+  }
+  .shape .buttons button {
+    font-size: 14px;
+  }
+  div.settings {
+    width: 23em;
+    height: 18em;
+  }
+  div.settings .colors {
+    width: 300px;
+  }
+  div.settings .colors div {
+    width: 45px;
+    height: 45px;
+  }
+  div.settings .speed {
+    width: 300px;
+  }
+  div.settings .speed div {
+    font-size: 20px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
